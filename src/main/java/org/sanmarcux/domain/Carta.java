@@ -80,10 +80,7 @@ public class Carta implements Serializable {
             return false;
         }
         Carta other = (Carta) object;
-        if ((this.idCarta == null && other.idCarta != null) || (this.idCarta != null && !this.idCarta.equals(other.idCarta))) {
-            return false;
-        }
-        return true;
+        return !((this.idCarta == null && other.idCarta != null) || (this.idCarta != null && !this.idCarta.equals(other.idCarta)));
     }
 
     @Override

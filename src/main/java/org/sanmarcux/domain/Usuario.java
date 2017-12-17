@@ -16,7 +16,7 @@ import java.util.Collection;
 @NamedQueries({
         @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
         @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario"),
-        @NamedQuery(name = "Usuario.findByDatesUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.clave = :clave")})
+        @NamedQuery(name = "Usuario.findByDataUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.clave = :clave")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -160,10 +160,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
-            return false;
-        }
-        return true;
+        return !((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario)));
     }
 
     @Override

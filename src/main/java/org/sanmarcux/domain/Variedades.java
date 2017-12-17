@@ -108,10 +108,7 @@ public class Variedades implements Serializable {
             return false;
         }
         Variedades other = (Variedades) object;
-        if ((this.idVariedad == null && other.idVariedad != null) || (this.idVariedad != null && !this.idVariedad.equals(other.idVariedad))) {
-            return false;
-        }
-        return true;
+        return !((this.idVariedad == null && other.idVariedad != null) || (this.idVariedad != null && !this.idVariedad.equals(other.idVariedad)));
     }
 
     @Override

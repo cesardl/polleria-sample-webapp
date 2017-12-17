@@ -111,10 +111,7 @@ public class Compra implements Serializable {
             return false;
         }
         Compra other = (Compra) object;
-        if ((this.idCompra == null && other.idCompra != null) || (this.idCompra != null && !this.idCompra.equals(other.idCompra))) {
-            return false;
-        }
-        return true;
+        return !((this.idCompra == null && other.idCompra != null) || (this.idCompra != null && !this.idCompra.equals(other.idCompra)));
     }
 
     @Override

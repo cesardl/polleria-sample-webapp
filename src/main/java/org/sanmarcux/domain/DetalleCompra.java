@@ -97,10 +97,7 @@ public class DetalleCompra implements Serializable {
             return false;
         }
         DetalleCompra other = (DetalleCompra) object;
-        if ((this.idDetalleCompra == null && other.idDetalleCompra != null) || (this.idDetalleCompra != null && !this.idDetalleCompra.equals(other.idDetalleCompra))) {
-            return false;
-        }
-        return true;
+        return !((this.idDetalleCompra == null && other.idDetalleCompra != null) || (this.idDetalleCompra != null && !this.idDetalleCompra.equals(other.idDetalleCompra)));
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.sanmarcux.service.UsuarioService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +18,9 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 /**
- * @author root
+ * @author Cesardl
  */
+@WebServlet(name = "LoginServlet", value = "/login.servlet")
 public class LoginServlet extends HttpServlet {
 
     private UsuarioService usuarioService;
@@ -35,12 +37,25 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException      if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        String password = request.getParameter("j_passwd");
+//        try {
+//            String x = request.getParameter("j_passwd");
+//            System.out.println(x);
+//            java.security.MessageDigest d = java.security.MessageDigest.getInstance("SHA-1");
+//            d.reset();
+//            d.update(x.getBytes());
+//            password = new String(Base64.getEncoder().encode(d.digest()));
+//        } catch (NoSuchAlgorithmException e) {
+//            password = "";
+//            e.printStackTrace();
+//        }
+
         if (request.getParameter("login") != null) {
-            Usuario u = new Usuario(request.getParameter("j_user"), request.getParameter("j_passwd"));
+            Usuario u = new Usuario(request.getParameter("j_user"), password);
             if ((u = usuarioService.validarUsuario(u)) != null) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("admin_visible", true);
@@ -50,16 +65,14 @@ public class LoginServlet extends HttpServlet {
             }
         } else {
             HttpSession session = request.getSession();
-            Enumeration atributos = session.getAttributeNames();
-            while (atributos.hasMoreElements()) {
-                session.removeAttribute(atributos.nextElement().toString());
+            Enumeration attributes = session.getAttributeNames();
+            while (attributes.hasMoreElements()) {
+                session.removeAttribute(attributes.nextElement().toString());
             }
         }
         RequestDispatcher rd = request.getRequestDispatcher("bienvenido.jsp");
         rd.forward(request, response);
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -97,5 +110,5 @@ public class LoginServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 }

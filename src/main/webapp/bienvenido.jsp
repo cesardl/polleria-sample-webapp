@@ -85,7 +85,7 @@
                         </td>
                         <td align="right">
                             <a id="logout" class="action" name="logout"
-                               href="login.servlet">Cerrar sesion</a>
+                               href="login.servlet">Cerrar sesi&oacute;n</a>
                         </td>
                     </tr>
                     <tr>

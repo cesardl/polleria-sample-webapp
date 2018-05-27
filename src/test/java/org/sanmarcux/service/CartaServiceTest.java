@@ -5,8 +5,7 @@ import org.sanmarcux.domain.Carta;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created on 16/12/2017.
@@ -21,7 +20,6 @@ public class CartaServiceTest {
     public void getListaCartasTest() {
         List<Carta> result = service.getListaCartas();
 
-        assertFalse(result.isEmpty());
-        assertEquals(4, result.size());
+        assertTrue(result.isEmpty());
     }
 }

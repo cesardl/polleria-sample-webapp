@@ -38,7 +38,7 @@
                             <td>${var.nombre}</td>
                             <td>${var.descripcion}</td>
                             <td style="text-align: center;">
-                                <fmt:formatNumber value="${var.precio}" pattern="0.00"></fmt:formatNumber>
+                                <fmt:formatNumber value="${var.precio}" pattern="0.00"/>
                             </td>
                             <c:if test="${admin_visible}">
                                 <td>Editar</td>

@@ -11,11 +11,20 @@ import java.util.Collection;
  */
 public class Carta {
 
+    private String keyCarta;
     private Integer idCarta;
     private String variedad;
     private Collection<Variedades> variedadesCollection;
 
     public Carta() {
+    }
+
+    public String getKeyCarta() {
+        return keyCarta;
+    }
+
+    public void setKeyCarta(String keyCarta) {
+        this.keyCarta = keyCarta;
     }
 
     public Carta(Integer idCarta) {

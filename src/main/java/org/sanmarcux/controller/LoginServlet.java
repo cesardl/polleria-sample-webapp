@@ -55,8 +55,8 @@ public class LoginServlet extends HttpServlet {
 //        }
 
         if (request.getParameter("login") != null) {
-            Usuario u = new Usuario(request.getParameter("j_user"), password);
-            if ((u = usuarioService.validarUsuario(u)) != null) {
+            Usuario u = usuarioService.validarUsuario(request.getParameter("j_user"), password);
+            if (u != null) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("admin_visible", true);
                 session.setAttribute("usuario", u);

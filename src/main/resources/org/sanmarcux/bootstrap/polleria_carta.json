@@ -1,0 +1,18 @@
+[
+  {
+    "id_carta": 1,
+    "variedad": "Ensaladas"
+  },
+  {
+    "id_carta": 2,
+    "variedad": "Pollos a la Brazas"
+  },
+  {
+    "id_carta": 3,
+    "variedad": "Bebidas"
+  },
+  {
+    "id_carta": 4,
+    "variedad": "Entradas al carbon"
+  }
+]

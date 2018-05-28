@@ -1,0 +1,14 @@
+[
+  {
+    "idUsuario": 1,
+    "usuario": "admin",
+    "nombres": "PABLO CESAR",
+    "apellidos": "DIAZ LURITA",
+    "clave": "admin",
+    "dni": "45236984",
+    "direccion": null,
+    "telefonoFijo": 2583361,
+    "telefonoMovil": 992163031,
+    "confirmado": "True"
+  }
+]

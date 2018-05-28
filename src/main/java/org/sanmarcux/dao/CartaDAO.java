@@ -4,6 +4,7 @@
  */
 package org.sanmarcux.dao;
 
+import com.google.appengine.api.datastore.Entity;
 import org.sanmarcux.domain.Carta;
 
 import java.util.List;
@@ -13,5 +14,7 @@ import java.util.List;
  */
 public interface CartaDAO {
 
-    List<Carta> getCartas();
+    String KIND_CARTA = Carta.class.getCanonicalName();
+
+    List<Entity> getCartas();
 }

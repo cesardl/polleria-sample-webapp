@@ -1,0 +1,149 @@
+[
+  {
+    "id_variedad": 1,
+    "id_carta": 4,
+    "Nombre": "Anticuchos de lomos",
+    "descripcion": "Anticuchos de lomo acompañado de papas fritas",
+    "precio": 21.0
+  },
+  {
+    "id_variedad": 2,
+    "id_carta": 4,
+    "Nombre": "Anticuchos de res",
+    "descripcion": "Anticuchos de res acompañado de papas fritas",
+    "precio": 17.0
+  },
+  {
+    "id_variedad": 3,
+    "id_carta": 4,
+    "Nombre": "Brochetas de lomos",
+    "descripcion": "Brochetas de lomo(2) acompanhado de papas fritas",
+    "precio": 22.0
+  },
+  {
+    "id_variedad": 4,
+    "id_carta": 4,
+    "Nombre": "Brochetas de pollo",
+    "descripcion": "Brochetas de pechuga de pollo (2), intercalados",
+    "precio": 16.0
+  },
+  {
+    "id_variedad": 5,
+    "id_carta": 4,
+    "Nombre": "Chorizos",
+    "descripcion": "Chorizos (2) acompanhados con papas fritas",
+    "precio": 11.0
+  },
+  {
+    "id_variedad": 6,
+    "id_carta": 4,
+    "Nombre": "Mollejitas pollo",
+    "descripcion": "Chorizos (2) acompanhados con papas fritas",
+    "precio": 11.0
+  },
+  {
+    "id_variedad": 7,
+    "id_carta": 4,
+    "Nombre": "Mollejitas res",
+    "descripcion": "Mollejitas de Res acompanhadas con papas fritas",
+    "precio": 13.0
+  },
+  {
+    "id_variedad": 8,
+    "id_carta": 1,
+    "Nombre": "Ensalada Mixta",
+    "descripcion": "Lechuga, tomate, pepinos, palta y vinagreta",
+    "precio": 8.0
+  },
+  {
+    "id_variedad": 9,
+    "id_carta": 1,
+    "Nombre": "Ensalada Verano",
+    "descripcion": "Lechuga organica, zanahoria rallada, melon, apio, ",
+    "precio": 9.0
+  },
+  {
+    "id_variedad": 10,
+    "id_carta": 2,
+    "Nombre": "1/8 de pollo a la braza",
+    "descripcion": "1/8 de pollo a la braza con papas y cremas",
+    "precio": 6.0
+  },
+  {
+    "id_variedad": 11,
+    "id_carta": 2,
+    "Nombre": "1/4 pollo a la braza",
+    "descripcion": "1/4 de pollo a la braza con papas y cremas",
+    "precio": 8.0
+  },
+  {
+    "id_variedad": 12,
+    "id_carta": 2,
+    "Nombre": "1/2 pollo a la brasa",
+    "descripcion": "1/2 de pollo a la braza con papas y cremas",
+    "precio": 14.0
+  },
+  {
+    "id_variedad": 13,
+    "id_carta": 2,
+    "Nombre": "1 pollo a la braza",
+    "descripcion": "1 pollo a la braza entero con papas y  cremas",
+    "precio": 20.0
+  },
+  {
+    "id_variedad": 14,
+    "id_carta": 2,
+    "Nombre": "1 porcion de papas",
+    "descripcion": "1 porcion de papas",
+    "precio": 5.0
+  },
+  {
+    "id_variedad": 15,
+    "id_carta": 2,
+    "Nombre": "1 pollo",
+    "descripcion": "1 pollo entero",
+    "precio": 16.0
+  },
+  {
+    "id_variedad": 16,
+    "id_carta": 3,
+    "Nombre": "1lt gaseosa Inka Kola",
+    "descripcion": "gaseosa Inka Kola de litro",
+    "precio": 4.0
+  },
+  {
+    "id_variedad": 17,
+    "id_carta": 3,
+    "Nombre": "1,5lt gaseosa Inka Kola",
+    "descripcion": "gaseosa Inka Kola de litro y medio",
+    "precio": 5.0
+  },
+  {
+    "id_variedad": 18,
+    "id_carta": 3,
+    "Nombre": "2 lt gaseosa Inka Kola",
+    "descripcion": "gaseosa Inka Kola de dos litros",
+    "precio": 6.0
+  },
+  {
+    "id_variedad": 19,
+    "id_carta": 3,
+    "Nombre": "1lt gaseosa coca cola",
+    "descripcion": "gaseosa coca cola de litro",
+    "precio": 4.0
+  },
+  {
+    "id_variedad": 20,
+    "id_carta": 3,
+    "Nombre": "1,5Lt gaseosa coca cola",
+    "descripcion": "gaseosa coca cola de Litro y medio",
+    "precio": 5.0
+  },
+  {
+    "id_variedad": 21,
+    "id_carta": 3,
+    "Nombre": "2lt gaseosa coca cola",
+    "descripcion": "gaseosa coca cola de dos litros",
+    "precio": 6.0
+  }
+]

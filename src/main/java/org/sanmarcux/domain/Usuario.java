@@ -4,15 +4,21 @@
  */
 package org.sanmarcux.domain;
 
-import java.io.Serializable;
-import java.util.Collection;
-
 /**
  * @author cesardl
  */
-public class Usuario implements Serializable {
+public class Usuario {
 
-    private static final long serialVersionUID = 1L;
+    public static final String ID_USUARIO = "idUsuario";
+    public static final String USUARIO = "usuario";
+    public static final String NOMBRES = "nombres";
+    public static final String APELLIDOS = "apellidos";
+    public static final String CLAVE = "clave";
+    public static final String DNI = "dni";
+    public static final String DIRECCION = "direccion";
+    public static final String TELEFONO_FIJO = "telefonoFijo";
+    public static final String TELEFONO_MOVIL = "telefonoMovil";
+    public static final String CONFIRMADO = "confirmado";
 
     private Integer idUsuario;
     private String usuario;
@@ -21,109 +27,131 @@ public class Usuario implements Serializable {
     private String clave;
     private String dni;
     private String direccion;
-    private Integer telefonoFijo;
-    private Integer telefonoMovil;
+    private String telefonoFijo;
+    private String telefonoMovil;
     private String confirmado;
-    private Collection<Compra> compraCollection;
+
+    public static class Builder {
+        private Integer idUsuario;
+        private String usuario;
+        private String nombres;
+        private String apellidos;
+        private String clave;
+        private String dni;
+        private String direccion;
+        private String telefonoFijo;
+        private String telefonoMovil;
+        private String confirmado;
+
+        public Builder idUsuario(Integer val) {
+            idUsuario = val;
+            return this;
+        }
+
+        public Builder usuario(String val) {
+            usuario = val;
+            return this;
+        }
+
+        public Builder nombres(String val) {
+            nombres = val;
+            return this;
+        }
+
+        public Builder apellidos(String val) {
+            apellidos = val;
+            return this;
+        }
+
+        public Builder clave(String val) {
+            clave = val;
+            return this;
+        }
+
+        public Builder dni(String val) {
+            dni = val;
+            return this;
+        }
+
+        public Builder direccion(String val) {
+            direccion = val;
+            return this;
+        }
+
+        public Builder telefonoFijo(String val) {
+            telefonoFijo = val;
+            return this;
+        }
+
+        public Builder telefonoMovil(String val) {
+            telefonoMovil = val;
+            return this;
+        }
+
+        public Builder confirmado(String val) {
+            confirmado = val;
+            return this;
+        }
+
+        public Usuario build() {
+            return new Usuario(this);
+        }
+    }
 
     public Usuario() {
     }
 
-    public Usuario(String usuario, String clave) {
-        this.usuario = usuario;
-        this.clave = clave;
-    }
-
-    public Usuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    private Usuario(Builder builder) {
+        idUsuario = builder.idUsuario;
+        usuario = builder.usuario;
+        nombres = builder.nombres;
+        apellidos = builder.apellidos;
+        clave = builder.clave;
+        dni = builder.dni;
+        direccion = builder.direccion;
+        telefonoFijo = builder.telefonoFijo;
+        telefonoMovil = builder.telefonoMovil;
+        confirmado = builder.confirmado;
     }
 
     public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
     public String getUsuario() {
         return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
 
     public String getNombres() {
         return nombres;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
     public String getApellidos() {
         return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public String getClave() {
         return clave;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
     public String getDni() {
         return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public Integer getTelefonoFijo() {
+    public String getTelefonoFijo() {
         return telefonoFijo;
     }
 
-    public void setTelefonoFijo(Integer telefonoFijo) {
-        this.telefonoFijo = telefonoFijo;
-    }
-
-    public Integer getTelefonoMovil() {
+    public String getTelefonoMovil() {
         return telefonoMovil;
-    }
-
-    public void setTelefonoMovil(Integer telefonoMovil) {
-        this.telefonoMovil = telefonoMovil;
     }
 
     public String getConfirmado() {
         return confirmado;
-    }
-
-    public void setConfirmado(String confirmado) {
-        this.confirmado = confirmado;
-    }
-
-    public Collection<Compra> getCompraCollection() {
-        return compraCollection;
-    }
-
-    public void setCompraCollection(Collection<Compra> compraCollection) {
-        this.compraCollection = compraCollection;
     }
 
     @Override

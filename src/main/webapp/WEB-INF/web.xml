@@ -4,23 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
-    <servlet>
-        <servlet-name>CartaServlet</servlet-name>
-        <servlet-class>org.sanmarcux.controller.CartaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VariedadServlet</servlet-name>
-        <servlet-class>org.sanmarcux.controller.VariedadesServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CartaServlet</servlet-name>
-        <url-pattern>/carta.servlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VariedadServlet</servlet-name>
-        <url-pattern>/variedades.servlet</url-pattern>
-    </servlet-mapping>
-
     <!--
     <security-constraint>
         <web-resource-collection>
@@ -32,6 +15,10 @@
         </user-data-constraint>
     </security-constraint>
     -->
+
+    <listener>
+        <listener-class>org.sanmarcux.listener.DataStoreListener</listener-class>
+    </listener>
 
     <session-config>
         <session-timeout>30</session-timeout>

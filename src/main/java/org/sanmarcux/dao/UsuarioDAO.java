@@ -4,6 +4,7 @@
  */
 package org.sanmarcux.dao;
 
+import com.google.appengine.api.datastore.Entity;
 import org.sanmarcux.domain.Usuario;
 
 /**
@@ -11,5 +12,7 @@ import org.sanmarcux.domain.Usuario;
  */
 public interface UsuarioDAO {
 
-    Usuario getUsuario(Usuario usuario);
+    String KIND_USUARIO = Usuario.class.getCanonicalName();
+
+    Entity getUsuario(String username, String password);
 }

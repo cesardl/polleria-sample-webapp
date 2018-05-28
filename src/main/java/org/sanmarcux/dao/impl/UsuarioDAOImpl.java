@@ -4,8 +4,13 @@
  */
 package org.sanmarcux.dao.impl;
 
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
 import org.sanmarcux.dao.UsuarioDAO;
-import org.sanmarcux.domain.Usuario;
+import org.sanmarcux.util.PolleriaUtil;
+
+import java.util.Optional;
 
 /**
  * @author cesardl
@@ -13,13 +18,12 @@ import org.sanmarcux.domain.Usuario;
 public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
-    public Usuario getUsuario(Usuario usuario) {
-        if ("admin".equals(usuario.getClave())) {
-            usuario.setIdUsuario(1);
-            usuario.setNombres("Cesar");
-            usuario.setApellidos("Diaz");
-            return usuario;
-        }
-        return null;
+    public Entity getUsuario(String username, String password) {
+        final Query q = new Query(KIND_USUARIO)
+                .setFilter(new Query.FilterPredicate("usuario", Query.FilterOperator.EQUAL, username))
+                .setFilter(new Query.FilterPredicate("clave", Query.FilterOperator.EQUAL, password));
+
+        PreparedQuery pq = PolleriaUtil.getDatastoreService().prepare(q);
+        return pq.asSingleEntity();
     }
 }

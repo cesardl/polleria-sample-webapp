@@ -1,7 +1,5 @@
 package org.sanmarcux.controller;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import org.junit.After;
@@ -12,9 +10,8 @@ import org.junit.runners.JUnit4;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.sanmarcux.dao.UsuarioDAO;
+import org.sanmarcux.bootstrap.PolleriaBootstrap;
 import org.sanmarcux.domain.Usuario;
-import org.sanmarcux.util.PolleriaUtil;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -66,13 +63,7 @@ public class LoginServletTest {
         responseWriter = new StringWriter();
         when(mockResponse.getWriter()).thenReturn(new PrintWriter(responseWriter));
 
-        DatastoreService ds = PolleriaUtil.getDatastoreService();
-        Entity entity = new Entity(UsuarioDAO.KIND_USUARIO);
-        entity.setProperty(Usuario.USUARIO, "admin");
-        entity.setProperty(Usuario.CLAVE, "admin");
-        entity.setProperty(Usuario.NOMBRES, "fake");
-        entity.setProperty(Usuario.APELLIDOS, "fake");
-        ds.put(entity);
+        PolleriaBootstrap.getInstance().initUsuarios();
     }
 
     @After

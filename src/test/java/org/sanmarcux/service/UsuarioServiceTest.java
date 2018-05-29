@@ -4,9 +4,11 @@ import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestC
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.sanmarcux.bootstrap.PolleriaBootstrap;
 import org.sanmarcux.domain.Usuario;
+
+import java.io.IOException;
 
 import static org.junit.Assert.*;
 
@@ -22,8 +24,9 @@ public class UsuarioServiceTest {
     private UsuarioService service = new UsuarioService();
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException {
         helper.setUp();
+        PolleriaBootstrap.getInstance().initUsuarios();
     }
 
     @After
@@ -31,7 +34,6 @@ public class UsuarioServiceTest {
         helper.tearDown();
     }
 
-    @Ignore
     @Test
     public void validarUsuarioCorrectoTest() {
         String username = "admin";

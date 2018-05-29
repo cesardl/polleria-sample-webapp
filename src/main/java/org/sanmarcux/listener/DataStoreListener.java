@@ -1,27 +1,36 @@
 package org.sanmarcux.listener;
 
-import org.sanmarcux.dao.CartaDAO;
-import org.sanmarcux.dao.impl.CartaDAOImpl;
+import org.sanmarcux.bootstrap.PolleriaBootstrap;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+import java.io.IOException;
 
 /**
  * Created on 27/05/2018.
  *
  * @author Cesardl
  */
+@WebListener
 public class DataStoreListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("Starting up!");
-        CartaDAO cartaDAO = new CartaDAOImpl();
-        cartaDAO.getCartas();
+        servletContextEvent.getServletContext().log("Starting up!");
+
+        PolleriaBootstrap bootstrap = PolleriaBootstrap.getInstance();
+        try {
+            bootstrap.initUsuarios();
+            bootstrap.initCartas();
+            bootstrap.initVariedades();
+        } catch (IOException e) {
+            servletContextEvent.getServletContext().log(e.getMessage(), e);
+        }
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        System.out.println("Shutting down!");
+        // App Engine does not currently invoke this method.
     }
 }

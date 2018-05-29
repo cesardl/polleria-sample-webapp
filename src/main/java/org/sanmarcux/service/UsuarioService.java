@@ -4,13 +4,12 @@
  */
 package org.sanmarcux.service;
 
-import com.google.appengine.api.datastore.Entity;
 import org.sanmarcux.dao.UsuarioDAO;
 import org.sanmarcux.dao.impl.UsuarioDAOImpl;
 import org.sanmarcux.domain.Usuario;
 
 /**
- * @author root
+ * @author Cesardl
  */
 public class UsuarioService {
 
@@ -21,14 +20,6 @@ public class UsuarioService {
     }
 
     public Usuario validarUsuario(String username, String password) {
-        Entity entity = dao.getUsuario(username, password);
-        if (entity == null) {
-            return null;
-        }
-
-        return new Usuario.Builder()
-                .nombres(entity.getProperty(Usuario.NOMBRES).toString())
-                .apellidos(entity.getProperty(Usuario.APELLIDOS).toString())
-                .build();
+        return dao.getUsuario(username, password);
     }
 }

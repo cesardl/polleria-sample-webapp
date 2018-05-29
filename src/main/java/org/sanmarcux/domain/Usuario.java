@@ -4,10 +4,14 @@
  */
 package org.sanmarcux.domain;
 
+import java.io.Serializable;
+
 /**
  * @author cesardl
  */
-public class Usuario {
+public class Usuario implements Serializable {
+
+    private static final long serialVersionUID = 337603119890405695L;
 
     public static final String ID_USUARIO = "idUsuario";
     public static final String USUARIO = "usuario";
@@ -20,16 +24,16 @@ public class Usuario {
     public static final String TELEFONO_MOVIL = "telefonoMovil";
     public static final String CONFIRMADO = "confirmado";
 
-    private Integer idUsuario;
-    private String usuario;
-    private String nombres;
-    private String apellidos;
-    private String clave;
-    private String dni;
-    private String direccion;
-    private String telefonoFijo;
-    private String telefonoMovil;
-    private String confirmado;
+    private final Integer idUsuario;
+    private final String usuario;
+    private final String nombres;
+    private final String apellidos;
+    private final String clave;
+    private final String dni;
+    private final String direccion;
+    private final String telefonoFijo;
+    private final String telefonoMovil;
+    private final String confirmado;
 
     public static class Builder {
         private Integer idUsuario;
@@ -96,9 +100,6 @@ public class Usuario {
         public Usuario build() {
             return new Usuario(this);
         }
-    }
-
-    public Usuario() {
     }
 
     private Usuario(Builder builder) {
